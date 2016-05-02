@@ -10,3 +10,5 @@ Notes:
 
 This is valid D.
 Does anyone know the name of this language feature?
+
+In December 2014 ...
