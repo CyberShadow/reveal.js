@@ -11,7 +11,7 @@ void main()
 		switch (fn.extension)
 		{
 			case ".md":
-				html ~= `<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$`;
+				html ~= `<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-separator-notes="^Notes:">`;
 				html ~= `<script type="text/template">`;
 				html ~= fn.readText();
 				html ~= `</script></section>`;
