@@ -10,12 +10,14 @@ void main()
 {
 	string html;
 	foreach (fn; "slides".dirEntries(SpanMode.depth).filter!(de => de.isFile).map!(de => de.name).array.sort())
+	{
+		auto id = fn.replaceAll(regex(`[^a-z]+`), "-");
 		switch (fn.extension)
 		{
 			case ".md":
 			{
 				auto markdown = fn.readText().processMarkdown(fn);
-				html ~= `<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-separator-notes="^Notes:">`;
+				html ~= `<section class="` ~ id ~ `" data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-separator-notes="^Notes:">`;
 				html ~= `<script type="text/template">`;
 				html ~= markdown;
 				html ~= `</script></section>`;
@@ -30,6 +32,7 @@ void main()
 				stderr.writeln("Unknown file extension ", fn);
 				break;
 		}
+	}
 	std.file.write("index.html", "index-template.html".readText.replace("<!-- SLIDES -->", html));
 }
 
