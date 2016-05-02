@@ -3,6 +3,8 @@ import std.array;
 import std.file;
 import std.path;
 import std.stdio;
+import std.string;
+import std.regex;
 
 void main()
 {
@@ -11,17 +13,40 @@ void main()
 		switch (fn.extension)
 		{
 			case ".md":
+			{
+				auto markdown = fn.readText().processMarkdown(fn);
 				html ~= `<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-separator-notes="^Notes:">`;
 				html ~= `<script type="text/template">`;
-				html ~= fn.readText();
+				html ~= markdown;
 				html ~= `</script></section>`;
 				break;
+			}
 			case ".html":
 				html ~= fn.readText();
+				break;
+			case ".d":
 				break;
 			default:
 				stderr.writeln("Unknown file extension ", fn);
 				break;
 		}
 	std.file.write("index.html", "index-template.html".readText.replace("<!-- SLIDES -->", html));
+}
+
+string processMarkdown(string markdown, string fn = null)
+{
+	return markdown
+		.replaceAll!(m =>
+			"```d\n" ~
+			buildPath(fn.dirName, m[1])
+			.readText()
+			.processD()
+			.strip('\n') ~
+			"\n```"
+		)(regex(`^<(.*\.d)>$`, "m"));
+}
+
+string processD(string d)
+{
+	return d.replace("/*...*/", "...");
 }
