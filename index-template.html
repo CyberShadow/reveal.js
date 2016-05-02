@@ -20,6 +20,17 @@
          link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
          document.getElementsByTagName( 'head' )[0].appendChild( link );
         </script>
+		<style>
+		 /* Center code samples */
+		 .reveal pre {
+			 box-shadow: none;
+			 text-align: center;
+		 }
+		 .reveal pre code {
+			 text-align: left;
+			 display: inline-block;
+		 }
+		</style>
     </head>
     <body>
         <div class="reveal">
