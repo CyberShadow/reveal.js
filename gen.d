@@ -46,7 +46,11 @@ string processMarkdown(string markdown, string fn = null)
 			.processD()
 			.strip('\n') ~
 			"\n```"
-		)(regex(`^<(.*\.d)>$`, "m"));
+		)(regex(`^<(.*\.d)>$`, "m"))
+		.replaceAll!(m =>
+			"![](" ~ buildPath(fn.dirName, m[1]) ~ ")"
+		)(regex(`<(.*\.png)>`, "m"))
+	;
 }
 
 string processD(string d)
