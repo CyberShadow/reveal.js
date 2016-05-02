@@ -30,6 +30,20 @@
 			 text-align: left;
 			 display: inline-block;
 		 }
+
+		 /* https://github.com/hakimel/reveal.js/issues/1386#issuecomment-216221196 */
+		 html {
+			 background-color: red !important;
+		 }
+
+		 .reveal h5 {
+			 text-transform: none;
+		 }
+
+		 .reveal code {
+			 font-variant: normal;
+			 font-weight: normal;
+		 }
 		</style>
     </head>
     <body>
@@ -45,8 +59,15 @@
         <script>
          // More info https://github.com/hakimel/reveal.js#configuration
          Reveal.initialize({
+			 controls: false,
              history: true,
              transition: 'none',
+
+			 width: 960,
+			 height: 700,
+
+			 minScale: 0.001,
+			 maxScale: 1000,
 
              // More info https://github.com/hakimel/reveal.js#dependencies
              dependencies: [
