@@ -11,6 +11,8 @@ void main()
 	string html;
 	foreach (fn; "slides".dirEntries(SpanMode.depth).filter!(de => de.isFile).map!(de => de.name).array.sort())
 	{
+		if (fn.canFind("TODO"))
+			continue;
 		auto id = fn.replaceAll(regex(`[^a-z]+`), "-");
 		switch (fn.extension)
 		{
