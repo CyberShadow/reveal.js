@@ -61,14 +61,17 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
+		 var isDebug = true;
+		 var slideWidth = 600;
+
 		 // More info https://github.com/hakimel/reveal.js#configuration
 		 Reveal.initialize({
 			 controls: false,
 			 history: true,
 			 transition: 'none',
 
-			 width: 960,
-			 height: 700,
+			 width: slideWidth,
+			 height: slideWidth / 5 * 4,
 
 			 minScale: 0.001,
 			 maxScale: 1000,
@@ -81,6 +84,25 @@
 				 { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 			 ]
 		 });
+
+		 // Navigate with mouse clicks (clicker compatibility)
+		 function enableMouseNavigation()
+		 {
+			 var handleClick = function(e) {
+				 e.preventDefault();
+				 if(e.button === 0) Reveal.next();
+				 if(e.button === 2) Reveal.prev();
+			 }
+
+			 window.addEventListener("mousedown", handleClick, false);
+			 window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+		 }
+
+		 if (isDebug) {
+		 	 document.getElementsByClassName('slides')[0].style.outline = '1px solid black';
+		 } else {
+			 enableMouseNavigation();
+		 }
 		</script>
 	</body>
 </html>
