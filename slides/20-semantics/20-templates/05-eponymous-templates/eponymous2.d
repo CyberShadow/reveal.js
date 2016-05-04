@@ -1,5 +1,4 @@
-template sqr(int n)
-{
+template sqr(int n) {
 	enum sqr = n * n;
 }
 

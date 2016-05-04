@@ -1,1 +1,3 @@
-bypass UFCS restriction
+##### `Identity` + UFCS
+
+<identity_ufcs.d>

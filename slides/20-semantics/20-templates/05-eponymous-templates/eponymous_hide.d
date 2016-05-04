@@ -1,5 +1,4 @@
-template foo(int n)
-{
+template foo(int n) {
 	enum foo = n;
 	enum bar = "secret";
 }

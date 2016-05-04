@@ -34,4 +34,5 @@ Notes:
 
 <identity_traits_test2.d>
 
----
+<!-- useful for __traits -->
+

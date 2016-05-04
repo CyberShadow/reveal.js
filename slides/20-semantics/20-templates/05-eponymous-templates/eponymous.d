@@ -1,5 +1,4 @@
-template Tpl(int n)
-{
+template Tpl(int n) {
 	enum x  = n;
 	enum x2 = n*n;
 }
