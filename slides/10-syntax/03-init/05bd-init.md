@@ -2,6 +2,6 @@
 
 ```d
   int.init == 0
-float.init == float.nan
+float.init is float.nan
  char.init == '\xFF'
 ```

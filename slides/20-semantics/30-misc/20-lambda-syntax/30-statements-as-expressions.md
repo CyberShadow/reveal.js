@@ -1,1 +1,5 @@
-statements as expressions: { /* statements go here */ return x; }()
+##### Statements as expressions
+
+```d
+fun({ return 5; });
+```

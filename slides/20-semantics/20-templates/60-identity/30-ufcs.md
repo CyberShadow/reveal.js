@@ -13,7 +13,7 @@
 ##### `Identity` + UFCS
 
 ```d
-return site ~ "/somepage"
+return (site ~ "/somepage")
     .get()
     .match(regex(`<a href="(.*?)">`))
 	.front[1]
@@ -27,7 +27,7 @@ return site ~ "/somepage"
 ##### `Identity` + UFCS
 
 ```d
-return site ~ "/somepage"
+return (site ~ "/somepage")
     .get()
     .match(regex(`<a href="(.*?)">`))
 	.front[1]
