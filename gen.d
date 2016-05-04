@@ -57,5 +57,10 @@ string processMarkdown(string markdown, string fn = null)
 
 string processD(string d)
 {
-	return d.replace("/*...*/", "...");
+	return d
+		.replace("/*...*/", "...")
+		.splitLines
+		.filter!(line => !line.canFind("SKIP"))
+		.join("\n")
+	;
 }
