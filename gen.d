@@ -8,17 +8,41 @@ import std.regex;
 
 void main()
 {
-	string html;
+	string html, css;
 	foreach (fn; "slides".dirEntries(SpanMode.depth).filter!(de => de.isFile).map!(de => de.name).array.sort())
 	{
 		if (fn.canFind("TODO"))
 			continue;
-		auto id = fn.replaceAll(regex(`[^a-z]+`), "-");
+		auto id = "slide-" ~ fn.replaceAll(regex(`[^a-z0-9]+`), "-");
+
+		string processMarkdown(string markdown)
+		{
+			return markdown
+				.replaceAll!(m =>
+					"```d\n" ~
+					buildPath(fn.dirName, m[1])
+					.readText()
+					.processD()
+					.strip('\n') ~
+					"\n```"
+				)(regex(`^<(.*?\.d)>$`, "m"))
+				.replaceAll!(m =>
+					"![](" ~ buildPath(fn.dirName, m[1]) ~ ")"
+				)(regex(`<(.*?\.png)>`, "m"))
+				.replaceAll!((m) {
+					css ~= m[1].replace(`<ID>`, "." ~ id);
+					writeln(m[1]);
+					return string.init;
+				})(regex(`<style>(.*?)</style>`, "s"))
+			;
+		}
+
 		switch (fn.extension)
 		{
 			case ".md":
 			{
-				auto markdown = fn.readText().processMarkdown(fn);
+				auto markdown = fn.readText();
+				markdown = processMarkdown(markdown);
 				html ~= `<section class="` ~ id ~ `" data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-separator-notes="^Notes:">`;
 				html ~= `<script type="text/template">`;
 				html ~= markdown;
@@ -35,24 +59,12 @@ void main()
 				break;
 		}
 	}
-	std.file.write("index.html", "index-template.html".readText.replace("<!-- SLIDES -->", html));
-}
-
-string processMarkdown(string markdown, string fn = null)
-{
-	return markdown
-		.replaceAll!(m =>
-			"```d\n" ~
-			buildPath(fn.dirName, m[1])
-			.readText()
-			.processD()
-			.strip('\n') ~
-			"\n```"
-		)(regex(`^<(.*\.d)>$`, "m"))
-		.replaceAll!(m =>
-			"![](" ~ buildPath(fn.dirName, m[1]) ~ ")"
-		)(regex(`<(.*\.png)>`, "m"))
+	html = "index-template.html"
+		.readText
+		.replace("<!-- SLIDES -->", html)
+		.replace("/* STYLES */", css)
 	;
+	std.file.write("index.html", html);
 }
 
 string processD(string d)
