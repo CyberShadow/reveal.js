@@ -13,8 +13,7 @@ Notes:
 ##### `Identity` template
 
 ```d
-template Identity(alias X)
-{
+template Identity(alias X) {
     alias Identity = X;
 }
 ```
