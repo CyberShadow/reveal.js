@@ -79,8 +79,8 @@ string processD(string d)
 	;
 	auto indent = lines
 		.filter!(line => line.strip.length)
-		.map!(line => line.countUntil!(c => c != ' ').I!(x => x<0 ? 0 : x))
-		.fold!max(long(0));
+		.map!(line => line.countUntil!(c => c != ' ').I!(x => x<0 ? 100 : x))
+		.fold!min(long(100));
 	return lines
 		.map!(line => line[min(indent, $)..$])
 		.join("\n");
