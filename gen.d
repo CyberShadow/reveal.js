@@ -67,12 +67,21 @@ void main()
 	std.file.write("index.html", html);
 }
 
+alias I(alias X) = X;
+
 string processD(string d)
 {
-	return d
+	auto lines = d
 		.replace("/*...*/", "...")
+		.replace("\t", "    ")
 		.splitLines
 		.filter!(line => !line.canFind("SKIP"))
-		.join("\n")
 	;
+	auto indent = lines
+		.filter!(line => line.strip.length)
+		.map!(line => line.countUntil!(c => c != ' ').I!(x => x<0 ? 0 : x))
+		.fold!max(long(0));
+	return lines
+		.map!(line => line[min(indent, $)..$])
+		.join("\n");
 }
