@@ -1,10 +1,11 @@
 import std.stdio;
 
-void runfun(int line = __LINE__)   { writeln(line); }
-void tplfun(int line = __LINE__)() { writeln(line); }
+void a(int line = __LINE__)
+	{ writeln(line); }
+void b(int line = __LINE__)()
+	{ writeln(line); }
 
-void main()
-{
-	runfun();
-	tplfun();
+void main() {
+	a();
+	b();
 }

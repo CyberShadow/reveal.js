@@ -1,1 +1,6 @@
-alias parameters and context pointers (e.g. see SourceToolseatures.d)
+##### `alias` context binding
+
+<aliasbind.d>
+
+<!-- alias parameters and context pointers 
+TODO: (e.g. see SourceTools/features.d) --->
