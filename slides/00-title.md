@@ -18,7 +18,7 @@ Notes:
 
 - Hello, my name is
 - Thank you for coming and to the organizers
-- My talk is about
+- Show and tell / my talk is about
 - I did not expect this talk to be selected
 - Andrei's 3 cool things
   - I won't promise that all of them are useful
