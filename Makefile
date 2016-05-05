@@ -1,6 +1,8 @@
 DMD=dmd
 SLIDES = $(shell find slides -type f)
 
+.SUFFIXES:
+
 all : index.html plugin/highlight/highlight.js
 
 index.html : Makefile gen.d index-template.html $(SLIDES)
