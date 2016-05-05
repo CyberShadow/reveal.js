@@ -1,0 +1,39 @@
+##### `std.traits`
+
+<pre>
+fullyQualifiedName moduleName packageName arity
+functionAttributes functionLinkage FunctionTypeOf isSafe isUnsafe
+ParameterDefaults <i>ParameterIdentifierTuple</i>
+ParameterStorageClassTuple Parameters ReturnType
+SetFunctionAttributes variadicFunctionStyle BaseClassesTuple
+BaseTypeTuple classInstanceAlignment EnumMembers FieldNameTuple
+Fields hasAliasing hasElaborateAssign hasElaborateCopyConstructor
+hasElaborateDestructor hasIndirections hasMember hasNested
+hasUnsharedAliasing InterfacesTuple isNested MemberFunctionsTuple
+RepresentationTypeTuple TemplateArgsOf TemplateOf
+TransitiveBaseTypeTuple CommonType ImplicitConversionTargets
+CopyTypeQualifiers CopyConstness isAssignable isCovariantWith
+isImplicitlyConvertible isAggregateType isArray
+isAssociativeArray isAutodecodableString isBasicType isBoolean
+isBuiltinType isDynamicArray isFloatingPoint isIntegral
+isNarrowString isNumeric isPointer isScalarType isSigned
+isSomeChar isSomeString isStaticArray isUnsigned isAbstractClass
+isAbstractFunction isCallable isDelegate isExpressions
+isFinalClass isFinalFunction isFunctionPointer isInstanceOf
+isIterable isMutable isSomeFunction isTypeTuple ForeachType
+KeyType Largest mostNegative OriginalType PointerTarget Signed
+Unqual Unsigned ValueType mangledName Select select hasUDA
+getUDAs getSymbolsByUDA
+</pre>
+
+<style>
+<ID> pre {
+	font-size: 30%;
+}
+<ID> code {
+	text-align: center !important;
+}
+<ID> i {
+	background-color: yellow;
+}
+</style>

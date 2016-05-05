@@ -1,5 +1,5 @@
 struct S {
-	const void foo(this T)() {
+	const void foo() {
 	    pragma(msg, typeof(this));
 	    // const(S)
     }

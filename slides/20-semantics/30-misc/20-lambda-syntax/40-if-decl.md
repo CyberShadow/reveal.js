@@ -6,8 +6,4 @@ if (auto x = 5) {
 
 ---
 
-```d
-if (auto x = { return 5; }) {
-    ...
-}
-```
+<funclitif.d>

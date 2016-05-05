@@ -1,5 +1,5 @@
 ##### Statements as expressions
 
 ```d
-fun({ return 5; });
+fun({ return 5; }());
 ```
