@@ -98,11 +98,11 @@
 
 				.speaker-controls-time .timer,
 				.speaker-controls-time .clock {
-					width: 50%;
-					font-size: 1.9em;
+					font-size: 1.8em;
 				}
 
 				.speaker-controls-time .timer {
+					width: 60%;
 					float: left;
 				}
 
@@ -162,6 +162,7 @@
 				</div>
 				<div class="timer">
 					<span class="hours-value">00</span><span class="minutes-value">:00</span><span class="seconds-value">:00</span>
+					<span class="slideno-value">0</span>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -261,6 +262,9 @@
 					currentSlide.contentWindow.postMessage( JSON.stringify({ method: 'setState', args: [ data.state ] }), '*' );
 					upcomingSlide.contentWindow.postMessage( JSON.stringify({ method: 'setState', args: [ data.state ] }), '*' );
 					upcomingSlide.contentWindow.postMessage( JSON.stringify({ method: 'next' }), '*' );
+
+					var slideNoEl = document.querySelector( '.slideno-value' );
+					slideNoEl.innerHTML = '#' + data.state.indexh;
 
 				}
 

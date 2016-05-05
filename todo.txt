@@ -1,4 +1,5 @@
-- put online
++ embed font
++ slide counter
++ put online
 - permalink
-- embed font
 - semicolon animation?
