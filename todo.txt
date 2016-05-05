@@ -1,5 +1,6 @@
 + embed font
 + slide counter
 + put online
+- debug mode
 - permalink
 - semicolon animation?
