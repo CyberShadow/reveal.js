@@ -28,7 +28,7 @@ void main()
 				)(regex(`^<(.*?\.d)>$`, "m"))
 				.replaceAll!(m =>
 					"![](" ~ buildPath(fn.dirName, m[1]) ~ ")"
-				)(regex(`<(.*?\.png)>`, "m"))
+				)(regex(`<(.*?\.(png|svg))>`, "m"))
 				.replaceAll!((m) {
 					css ~= m[1].replace(`<ID>`, "." ~ id);
 					writeln(m[1]);
