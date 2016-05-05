@@ -1,4 +1,4 @@
-# `.destroy()`
+# `~this()`
 
 <style>
 <ID> h1 {
