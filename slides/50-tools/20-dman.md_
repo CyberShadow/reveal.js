@@ -1,7 +1,0 @@
-Tools: `dman`
-
-```text
-$ dman stripExtension
-=> http://dlang.org/phobos/
-   std_path.html#stripExtension
-```

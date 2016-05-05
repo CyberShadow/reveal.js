@@ -14,3 +14,5 @@ js/reveal.min.js
 
 /index.html
 /plugin/highlight/highlight.js
+/node_modules
+/npm-debug.log
