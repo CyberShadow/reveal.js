@@ -1,8 +1,8 @@
-# D Secrets
+## Practical Metaprogramming
 
 Vladimir Panteleev
 
-DConf 2016
+DConf 2017
 
 
 
