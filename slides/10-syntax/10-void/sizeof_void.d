@@ -1,1 +1,0 @@
-pragma(msg, void.sizeof);
