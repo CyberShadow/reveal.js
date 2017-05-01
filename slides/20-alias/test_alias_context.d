@@ -7,6 +7,6 @@ void printIt(alias var)()
 
 void main()
 {
-	int var = 42;
-	printIt!var();
+	int n = 42;
+	printIt!n();
 }
