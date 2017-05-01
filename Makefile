@@ -3,7 +3,11 @@ SLIDES = $(shell find slides -type f)
 
 .SUFFIXES:
 
-all : index.html plugin/highlight/highlight.js
+all : dot index.html plugin/highlight/highlight.js
+
+dot : $(addsuffix .svg, $(filter %.dot, $(SLIDES)))
+%.dot.svg : %.dot
+	dot $^ -Tsvg -O
 
 index.html : Makefile gen.d index-template.html $(SLIDES)
 	rdmd gen.d
