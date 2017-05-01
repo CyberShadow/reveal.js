@@ -1,5 +1,6 @@
 import std.algorithm;
 import std.array;
+import std.conv;
 import std.file;
 import std.path;
 import std.stdio;
@@ -22,10 +23,10 @@ void main()
 					"```d\n" ~
 					buildPath(fn.dirName, m[1])
 					.readText()
-					.processD()
+					.processD(m[3].length ? m[3].to!int : 4)
 					.strip('\n') ~
 					"\n```"
-				)(regex(`^<(.*?\.d)>$`, "m"))
+				)(regex(`^<(.*?\.d)( tabsize=(\d+))?>$`, "m"))
 				.replaceAll!(m =>
 					"![](" ~ buildPath(fn.dirName, m[1]) ~ ")"
 				)(regex(`<(.*?\.(png|svg))>`, "m"))
@@ -69,11 +70,11 @@ void main()
 
 alias I(alias X) = X;
 
-string processD(string d)
+string processD(string d, int tabSize)
 {
 	auto lines = d
 		.replace("/*...*/", "...")
-		.replace("\t", "    ")
+		.replace("\t", " ".replicate(tabSize))
 		.splitLines
 		.filter!(line => !line.canFind("SKIP"))
 	;
