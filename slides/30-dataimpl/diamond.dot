@@ -1,0 +1,7 @@
+digraph {
+	A -> B [dir=back]
+	A -> C [dir=back]
+	B -> D [dir=back]
+	C -> D [dir=back]
+	A, B, C, D [shape=box]
+}

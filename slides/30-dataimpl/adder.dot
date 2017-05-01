@@ -1,0 +1,15 @@
+digraph {
+	"2" [xlabel=x]
+	"3" [xlabel=y]
+	"4" [xlabel=z]
+	a1 [label="+" xlabel=a1]
+	a2 [label="+" xlabel=a2]
+	a3 [label="+" xlabel=a3]
+	"2" -> a1
+	"3" -> a1
+	"3" -> a2
+	"4" -> a2
+	a1 -> a3
+	a2 -> a3
+	"2", "3", "4", a1, a2, a3 [shape=box]
+}

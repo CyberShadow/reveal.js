@@ -1,0 +1,47 @@
+digraph {
+	rankdir=LR;
+
+	graph [ranksep="3"];
+
+	p3a [label="XML"]
+	p4a [label="JSON"]
+	p1a [label="Variant"]
+	p2a [label="struct"]
+	p5a [label="INI"]
+
+	p3b [label="XML"]
+	p4b [label="JSON"]
+	p1b [label="Variant"]
+	p2b [label="struct"]
+	p5b [label="INI"]
+
+	p1a -> p1b;
+	p1a -> p2b;
+	p1a -> p3b;
+	p1a -> p4b;
+	p1a -> p5b;
+	
+	p2a -> p1b;
+	p2a -> p2b;
+	p2a -> p3b;
+	p2a -> p4b;
+	p2a -> p5b;
+	
+	p3a -> p1b;
+	p3a -> p2b;
+	p3a -> p3b;
+	p3a -> p4b;
+	p3a -> p5b;
+	
+	p4a -> p1b;
+	p4a -> p2b;
+	p4a -> p3b;
+	p4a -> p4b;
+	p4a -> p5b;
+	
+	p5a -> p1b;
+	p5a -> p2b;
+	p5a -> p3b;
+	p5a -> p4b;
+	p5a -> p5b;
+}
