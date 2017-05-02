@@ -4,7 +4,7 @@
 
 Notes:
 
----
+----
 
 ```d
 struct SomeAllocator(ParentAllocator, 
@@ -26,16 +26,18 @@ Notes:
 - This is generally how std.experimental.allocator does compositing
   (nesting parent allocator in the object)
 
----
+----
 
 <diamond.dot.svg>
+
+<style> <ID> img { height: 350px; } </style>
 
 Notes:
 - Obligatory GraphViz slide
 - No obvious efficient way to do diamond-dependencies
 - C++ can do it with multiple inheritance
 
----
+----
 
 ```d
 template Component(Params...)
@@ -52,11 +54,13 @@ template Component(Params...)
 }
 ```
 
----
+----
 
 <adder.dot.svg>
 
----
+<style> <ID> img { height: 350px; } </style>
+
+----
 
 ```d
 // Need static either here or on Impl
@@ -77,7 +81,7 @@ template Component(Params...)
 Notes:
 - you won't be able to build this with a vanilla compiler
 
----
+----
 
 ```d
 template Adder(alias a, alias b)
@@ -93,7 +97,7 @@ template Adder(alias a, alias b)
 }
 ```
 
----
+----
 
 ```d
 struct Formula
@@ -115,7 +119,7 @@ struct Formula
 Notes:
 - Note that all the implementations have the same `this` pointer
 
----
+----
 
 ```d
 void main()
@@ -128,9 +132,11 @@ void main()
 }
 ```
 
----
+----
 
 <serialization.dot.svg>
+
+<style> <ID> img { height: 350px; } </style>
 
 Notes:
 - Most serialization libraries use a common representation that they then use to serialize to
@@ -140,11 +146,7 @@ Notes:
 - If I want to serialize to a given state, I can get a protocol which does this
 - This also allows building filters for processing hierarchical data
 
-<style>
-<ID> img { height: 350px; } 
-</style>
-
----
+----
 
 ##### Code:
 

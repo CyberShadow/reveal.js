@@ -8,26 +8,26 @@ Notes:
 - I never did complete it, but I did come up with a few cool ideas along the way, which I'd like to show you
 - Before I get to that, I need to explain a few concepts first
 
----
+----
 
 <test_alias_basic.d>
 
 Notes:
 `alias` works with many things (functions, types, other templates) but here I'm interested in variables
 
----
+----
 
 <test_alias_context.d>
 
 Notes:
 - context binding
 
----
+----
 
 <!--
 <test_alias_context_ro.d>
 
----
+----
 -->
 
 <test_alias_context_2.d>
@@ -35,7 +35,7 @@ Notes:
 Notes:
 - Ask audience if they think this compiles
 
----
+----
 
 ```d
 struct S
@@ -52,14 +52,14 @@ struct S
 Notes:
 - Ask audience what they think `static` does here
 
----
+----
 
 <test_alias_static.d tabsize=3>
 
 Notes:
 - This does not use the value of `i`, only its properties
 
----
+----
 
 ```d
 struct S
@@ -76,12 +76,12 @@ struct S
 }
 ```
 
----
+----
 
 <!--
 <test_alias_static_2.d tabsize=3>
 
----
+----
 -->
 
 <test_alias_NC.d>
@@ -90,7 +90,7 @@ Notes:
 - I mentioned this briefly last year
 - Ask audience if they think this compiles
 
----
+----
 
 <test_alias.d>
 
@@ -98,7 +98,7 @@ Notes:
 - Quirk #1
 - Method aliases used to have context before 2.061
 
----
+----
 
 <test_ambig_static_tpl.d>
 
@@ -106,7 +106,7 @@ Notes:
 - Quirk #2
 - No matter if `static` is present or not, this won't compile
 
----
+----
 
 ##### The missing operator:<br>`__traits(child)`
 
@@ -136,7 +136,7 @@ Notes:
           - problems with overloads
           - an alias refer to either an overload set or a specific overload, so they're strictly better
 
----
+----
 
 ```d
 static void printField(alias field)()
@@ -146,7 +146,7 @@ static void printField(alias field)()
 }
 ```
 
----
+----
 
 ```d
 static void printField(alias field)()
