@@ -36,6 +36,13 @@ void main()
 								"\n```"
 							)(regex(`^<(.*?\.d)( tabsize=(\d+))?>$`, "m"))
 							.replaceAll!(m =>
+								"```d\n" ~
+								buildPath(fn.dirName, m[1])
+								.readText()
+								.strip('\n') ~
+								"\n```"
+							)(regex(`^<(.*?\.pov)>$`, "m"))
+							.replaceAll!(m =>
 								"![](" ~ buildPath(fn.dirName, m[1]) ~ ")"
 							)(regex(`<(.*?\.(png|svg|jpe?g))>`, "m"))
 							.replaceAll!((m) {
