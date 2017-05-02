@@ -37,7 +37,7 @@ void main()
 							)(regex(`^<(.*?\.d)( tabsize=(\d+))?>$`, "m"))
 							.replaceAll!(m =>
 								"![](" ~ buildPath(fn.dirName, m[1]) ~ ")"
-							)(regex(`<(.*?\.(png|svg))>`, "m"))
+							)(regex(`<(.*?\.(png|svg|jpe?g))>`, "m"))
 							.replaceAll!((m) {
 								css ~= m[1].replace(`<ID>`, "." ~ id);
 								writeln(m[1]);
