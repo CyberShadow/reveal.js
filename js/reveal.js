@@ -3487,7 +3487,8 @@
 			indexv: indices.v,
 			indexf: indices.f,
 			paused: isPaused(),
-			overview: isOverview()
+			overview: isOverview(),
+			slideNum: dom.wrapper.querySelectorAll( HORIZONTAL_SLIDES_SELECTOR ).length
 		};
 
 	}
