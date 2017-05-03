@@ -267,6 +267,25 @@
 					var slideNoEl = document.querySelector( '.slideno-value' );
 					slideNoEl.innerHTML = '#' + data.state.indexh;
 
+					//slideNoEl.title = '/' + slideCount;
+					var progress = data.state.indexh / data.state.slideNum;
+					var presentationLength = 50 * 60 * 1000;
+					var targetTime = startTime.getTime() + ( presentationLength * progress );
+					var delta = targetTime - (new Date()).getTime();
+
+					slideNoEl.style['color'] = 'inherit';
+					slideNoEl.style['background-color'] = 'inherit';
+
+					var color = delta < 0 ? 'red' : 'green';
+
+					if (Math.abs(delta) < 5 * 60 * 1000) {
+						// OK
+					} else if (Math.abs(delta) < 7 * 60 * 1000) {
+						slideNoEl.style['color'] = color;
+					} else {
+						slideNoEl.style['color'] = 'white';
+						slideNoEl.style['background-color'] = color;
+					}
 				}
 
 				// Limit to max one state update per X ms
