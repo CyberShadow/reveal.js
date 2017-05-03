@@ -46,4 +46,17 @@ Notes:
 
 ----
 
-<!-- TODO -->
+##### Code:
+
+<a href="https://github.com/CyberShadow/ae/blob/master/utils/meta/chain.d">https://github.com/<br>CyberShadow/ae/blob/<br>master/utils/meta/chain.d</a>
+
+----
+
+<unity-logo.png>
+
+----
+
+<!-- TODO: Infinifactory screenshot -->
+<!-- TODO: That tower defense screenshot -->
+<!-- TODO: Card City Nights screenshot -->
+<!-- TODO:  -->

@@ -2,6 +2,10 @@
 
 ### Serialization
 
+Notes:
+
+- I'd like to start with serialization, because it's one of the things D is really good at
+
 ---
 
 ```d
@@ -18,6 +22,14 @@ struct Person
 	int age;
 }
 ```
+
+Notes:
+
+- For example, let's talk about JSON
+- That is what it looks like as a refresher
+- And let's say you want to write some code that converts between JSON like that and a D struct like this
+- As far as I know it is impossible period to do in C++, 
+- but in D it's really easy, and I'll quickly show you how
 
 ---
 
@@ -39,6 +51,7 @@ string toJson(T)(T v)
 
 Notes:
 
+- If you want to write a function to serialize an arbitrary type, you probably want to use `static if`
 - I cheat here by using std.format to serialize a JSON string like a D literal
 - You can also use std.traits or __traits
 
@@ -65,6 +78,7 @@ static if (is(T==struct))
 
 Notes:
 
+- structs are a special case because you will want to iterate over all members
 - not very efficient because of memory allocations
 - other than tupleof there is `__traits(getMembers)`
 - must use `v.tupleof[i]` to get identifier
@@ -161,4 +175,6 @@ case "refs.json":
 
 Notes:
 
-This is a fragment from the digger-web source code
+- Very convenient for AJAX applications
+- This is a fragment from the digger-web source code
+- It is very convenient to just fill a struct and send it over as JSON to the HTML/JavaScript component

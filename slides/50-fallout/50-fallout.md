@@ -225,6 +225,10 @@ Notes:
 
 <dxlog.png>
 
+Notes:
+
+- `RSSetViewports` is the sought function
+
 ----
 
 <upscale.png>

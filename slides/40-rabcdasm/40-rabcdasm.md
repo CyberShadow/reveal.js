@@ -3,10 +3,11 @@
 ### RABCDAsm
 
 Notes:
-- "I like video games,"
-  - "and if I particularly like a game I may tinker with it, so to say play the game and maybe play with the game itself"
-  - "This is one of my first D projects concerning game modding"
-- ...Newgrounds...
+- Who here likes **video games**?
+  - I like video games too,
+  - and if I particularly like a game, I will sometimes **tinker** with it
+  - This is one of my first D projects concerning game modding
+- Who here remembers **Newgrounds**?
 
 ----
 

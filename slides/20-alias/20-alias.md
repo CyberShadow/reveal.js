@@ -108,6 +108,11 @@ Notes:
 
 ----
 
+<!-- Kenji's proposal TODO
+
+----
+-->
+
 ##### The missing operator:<br>`__traits(child)`
 
 ```d
