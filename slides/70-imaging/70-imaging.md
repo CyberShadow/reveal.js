@@ -403,10 +403,13 @@ foreach (n; frames.iota.parallel)
 	.rotate(TAU * n / frames, BG)
 	.copy
 	.downscale!(W/256)
-	.lum2pix(gammaRamp!(ushort, ubyte, ColorSpace.sRGB))
+	.lum2pix(gammaRamp!(ushort, ubyte,
+		ColorSpace.sRGB))
 	.toPNG
 	.toFile("loading-%02d.png".format(n++));
 ```
+
+<style> <ID> pre { font-size: 50%; } </style>
 
 ----
 
