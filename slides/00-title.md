@@ -31,3 +31,21 @@ Notes:
 - Scott Meyers' previous talk was titled "Things that matter"
   - However, I haven't done anything terribly exciting last year, so
   - "I'm going to talk about a few random projects I did over the past few years where D's metaprogramming"
+- Link to slides after the talk
+
+<!--
+
+----
+
+# Slides
+
+[http://gl.is/](http://gl.is)
+
+<span>(temporary)</span>
+
+<style>
+<ID> a {
+	font-size: 200%;
+}
+</style>
+-->

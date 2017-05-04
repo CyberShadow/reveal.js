@@ -108,7 +108,21 @@ Notes:
 
 ----
 
-<!-- Kenji's proposal TODO
+
+```d
+void bar(static alias sym)() { ... }
+```
+
+<a href="https://wiki.dlang.org/Brush_Up_Language_Features#Nested_Symbols">https://wiki.dlang.org/<br>Brush_Up_Language_Features<br>#Nested_Symbols
+
+<style> <ID> p { font-size: 75%; } </style>
+
+Notes:
+- Kenji proposed this syntax
+
+----
+
+<!-- taskPool.parallel thing
 
 ----
 -->

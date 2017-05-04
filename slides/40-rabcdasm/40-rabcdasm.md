@@ -297,6 +297,14 @@ Notes:
 ----
 
 ```d
+string code;
+code ~= `struct ` ~ name ~ "\n{\n";
+```
+
+
+----
+
+```d
 static string makeStruct(...)()
 {
 	if (!__ctfe)
