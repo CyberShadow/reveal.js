@@ -110,6 +110,27 @@
 		 } else {
 			 enableMouseNavigation();
 		 }
+
+		 Reveal.addEventListener( 'slidechanged', function( event ) {
+			 if (event.previousSlide)
+			 Array.prototype.forEach.call(event.previousSlide.getElementsByTagName('video'), function(v) {
+				 v.pause();
+			 });
+			 if (event.currentSlide)
+			 Array.prototype.forEach.call(event.currentSlide.getElementsByTagName('video'), function(v) {
+				 v.play();
+			 });
+			 // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+		 } );
+
+		 setTimeout(function() {
+			 Array.prototype.forEach.call(document.getElementsByTagName('video'), function(v) {
+				 v.addEventListener('ended', function() {
+					 v.src = v.src.split("?")[0] + '?' + Math.random();
+					 v.play();
+				 }, false);
+			 });
+		 }, 1000);
 		</script>
 	</body>
 </html>
