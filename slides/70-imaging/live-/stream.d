@@ -42,7 +42,7 @@ void main()
 					"-framerate", "29.97",
 				]);
 
-			foreach (frameNumber; 0..5*30)
+			foreach (frameNumber; 0..15*30)
 			{
 				auto frame = decoder.front;
 
