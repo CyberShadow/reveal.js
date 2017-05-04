@@ -13,7 +13,7 @@ void main()
 	string html, css;
 	foreach (fn; "slides".dirEntries(SpanMode.depth).filter!(de => de.isFile).map!(de => de.name).array.sort())
 	{
-		if (fn.canFind("TODO"))
+		if (fn.canFind("TODO") || fn.canFind("-/"))
 			continue;
 
 		string processMarkdown(string markdown)
