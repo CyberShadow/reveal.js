@@ -42,7 +42,7 @@ void main()
 					"-framerate", "29.97",
 				]);
 
-			foreach (n; 0..5*30)
+			foreach (frameNumber; 0..5*30)
 			{
 				auto frame = decoder.front;
 
@@ -57,7 +57,7 @@ void main()
 							0, frame.h - (1 + cast(int)index) * font8x8.height,
 							line, font8x8, BGR.white));
 
-				auto dman = dmen[n / 10 % $];
+				auto dman = dmen[frameNumber / 10 % $];
 				frame
 					.blend(
 						dman      .border(0, frame.h-dman.h, frame.w-dman.w, 0, BGRA.init),
