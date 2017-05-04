@@ -240,8 +240,8 @@ Notes:
 <style> <ID> img { height: 450px; margin-top: -30px !important; } </style>
 
 Notes:
-
-- Oh, and it doesn't use the D runtime, and the DLL's file size is
+- To add to **Simon**'s list of thing using **-betterC**,
+- it also doesn't use the D runtime, and the DLL's file size is
   just 5 and a half kilobytes. So don't let anyone tell you that you
   can't build tiny DLLs with D, because it's just plain false.
 
