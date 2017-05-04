@@ -23,6 +23,7 @@ Notes:
 </div>
 
 Notes:
+- RABCDAsm is short for Vladimir Is Bad At Naming Things
 - This targets specifically the bytecode for the AVM
 - AS3 was released with Flash Player 9 in 2006
 - RABCDAsm appeared in 2010

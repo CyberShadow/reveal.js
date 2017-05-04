@@ -37,6 +37,10 @@ Notes:
 
 ----
 
+<test_alias_taskpool.d>
+
+----
+
 ```d
 struct S
 {
@@ -148,12 +152,14 @@ static void printField(alias field)()
 Notes:
 - tie in context-less aliases to this
 - generally, when we want to tell a function which field in a struct to use, we use either
-    - pointers
-    - inefficient
-        - the name of the field as a string, so that it gets glued together with a mixin
-          - hacky
-          - problems with overloads
-          - an alias refer to either an overload set or a specific overload, so they're strictly better
+  - pointers
+  - inefficient
+	- the name of the field as a string, so that it gets glued together with a mixin
+	  - hacky
+	  - problems with overloads
+	  - an alias refer to either an overload set or a specific overload, so they're strictly better
+- you could use delegates but they're limited
+- this allows easily implementing member pointers
 
 ----
 
@@ -164,6 +170,10 @@ static void printField(alias field)()
 	writeln(__traits(child, s, field));
 }
 ```
+
+Notes:
+- this was an interesting experience
+- the compiler code is very interesting in many places
 
 ----
 
