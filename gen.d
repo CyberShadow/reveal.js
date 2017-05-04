@@ -19,7 +19,7 @@ void main()
 		string processMarkdown(string markdown)
 		{
 			return markdown
-				.replaceAll(regex(`<!--.*-->`, "s"), "")
+				.replaceAll(regex(`<!--.*?-->`, "s"), "")
 				.splitter("\n----\n")
 				.enumerate
 				.map!((pair)
