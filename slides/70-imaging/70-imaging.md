@@ -414,3 +414,8 @@ foreach (n; frames.iota.parallel)
 ----
 
 <loading.gif>
+
+Notes:
+- this is a GIF, but we can also work with video directly
+- a video is basically a series of frames
+- you could interface with ffmpeg API, but I was **lazy and I used std.process**
