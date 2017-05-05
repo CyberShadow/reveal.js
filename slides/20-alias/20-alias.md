@@ -39,6 +39,10 @@ Notes:
 
 <test_alias_taskpool.d>
 
+Notes:
+- This is one of the more visible examples in Phobos
+- Single alias fgsfds 
+
 ----
 
 ```d
@@ -79,6 +83,9 @@ struct S
 	}
 }
 ```
+
+Notes:
+- `static` here does two different things
 
 ----
 
@@ -125,11 +132,6 @@ Notes:
 - Kenji proposed this syntax
 
 ----
-
-<!-- taskPool.parallel thing
-
-----
--->
 
 ##### The missing operator:<br>`__traits(child)`
 

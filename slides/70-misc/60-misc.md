@@ -100,7 +100,7 @@ Notes:
 
 <maybify.d>
 
-<style> <ID> pre { font-size: 25%; } </style>
+<style> <ID> pre { font-size: 22%; } </style>
 
 ----
 

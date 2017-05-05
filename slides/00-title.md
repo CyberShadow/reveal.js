@@ -30,8 +30,7 @@ Notes:
   - I'll try to answer one aspect of that in this talk
 - Scott Meyers' previous talk was titled "Things that matter"
   - However, I haven't done anything terribly exciting last year, so
-  - "I'm going to talk about a few random projects I did over the past few years where D's metaprogramming"
-- Link to slides after the talk
+  - "I'm going to talk about a few random **personal projects** I did over the past few years where D's metaprogramming"
 
 <!--
 

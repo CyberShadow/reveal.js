@@ -391,7 +391,37 @@ alias vflip = warp!(q{x}, q{h-y-1});
 /// Return a view of src
 /// with both coordinates inverted.
 alias flip = warp!(q{w-x-1}, q{h-y-1});
+```
 
+----
+
+```d
+/// Swap the X and Y axes (flip the image diagonally).
+auto flipXY(V)(auto ref V src)
+{
+	static struct FlipXY
+	{
+		mixin Warp!V;
+
+		@property int w() { return src.h; }
+		@property int h() { return src.w; }
+
+		void warp(ref int x, ref int y)
+		{
+			import std.algorithm;
+			swap(x, y);
+		}
+	}
+
+	return FlipXY(src);
+}
+```
+
+<style> <ID> pre { font-size: 45%; } </style>
+
+----
+
+```d
 /// Rotate a view 90 degrees clockwise.
 auto rotateCW(V)(auto ref V src)
 {
