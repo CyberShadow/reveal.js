@@ -29,7 +29,7 @@ void main()
 	auto p = pipe();
 	auto youtubeDl = spawnProcess([
 			"youtube-dl", "-o", "-",
-			"https://www.youtube.com/user/sociomantic/live",
+			"https://www.youtube.com/watch?v=_gfwk-zRwmk",
 		], stdin, p.writeEnd);
 	auto decoder = streamVideo(p.readEnd, ["-vf", "scale=640:360"]);
 	//auto ffmpeg = | ffmpeg -i - -vf vflip -c:a copy -f nut - | mpv -
