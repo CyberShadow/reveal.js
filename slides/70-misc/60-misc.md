@@ -1,6 +1,7 @@
-# Part 6
+<!--
+# Part 7
 
-### Miscellanea
+### Bonus slides
 
 Notes:
 - All right! Let's go over some small unclassifiables.
@@ -52,11 +53,58 @@ Notes:
 
 ----
 
+<infinifactory.jpg>
+
+----
+
+<kingdomrush.jpg>
+
+----
+
+<ccn.jpg>
+
+----
+
 <unity-logo.png>
 
 ----
 
-<!-- TODO: Infinifactory screenshot -->
-<!-- TODO: That tower defense screenshot -->
-<!-- TODO: Card City Nights screenshot -->
-<!-- TODO:  -->
+<fmap.d>
+
+<style> <ID> pre { font-size: 25%; } </style>
+
+----
+
+<typemap.d>
+
+<style> <ID> pre { font-size: 30%; } </style>
+
+Notes:
+- TypeMap is only really needed because of recursive types
+
+----
+
+<typemap.d>
+
+<style> <ID> pre { font-size: 30%; } </style>
+
+Notes:
+- TypeMap is only really needed because of recursive types
+
+----
+
+<maybe.d>
+
+<style> <ID> pre { font-size: 25%; } </style>
+
+----
+
+<maybify.d>
+
+<style> <ID> pre { font-size: 25%; } </style>
+
+----
+
+<a href="https://github.com/CyberShadow/rclidasm">https://github.com/<br>CyberShadow/rclidasm</a>
+
+-->

@@ -1,9 +1,11 @@
-# Part 7
+# Part 6
 
 ### Image Processing
 
 Notes:
 - Needed a way to programmatically create and manipulate images
+
+<!--
 - For a while used POV-Ray
 
 ----
@@ -36,9 +38,14 @@ Notes:
 Notes:
 - The result looks something like this
 - (This is the Worms Armageddon logo)
+-->
+
 - Started working on my own image library
 - Redesigned it a few years ago
-- Inspired by std.algorithm and std.ragne
+- Inspired by std.algorithm and std.range
+  - Present everything as small, composable components
+  - Avoid implicit copying and prefer lazy evaluation
+  - Use templates for efficient code
 
 ----
 
@@ -89,7 +96,8 @@ enum isDirectView(T) =
 
 Notes:
 - These are specializations
-- Same as `isForwardRange`
+- Same as `isForwardRange` (from `std.range`)
+- DirectView provides a memory slice of pixels
 
 ----
 
@@ -117,6 +125,7 @@ mixin template DirectView()
 <style> <ID> pre { font-size: 45%; } </style>
 
 Notes:
+- We can implement pixel access on top of scanlines
 
 ----
 
@@ -142,6 +151,9 @@ struct Image(COLOR)
 ```
 
 <style> <ID> pre { font-size: 45%; } </style>
+
+Notes:
+- Most of the library is lazy, but we do need to be able to actually store pixels in memory
 
 ----
 
@@ -171,6 +183,9 @@ template procedural(alias formula)
 
 <style> <ID> pre { font-size: 40%; } </style>
 
+Notes:
+- This wraps a function that takes a coordinate pair and maps it to a color
+
 ----
 
 ```d
@@ -183,6 +198,9 @@ auto solid(COLOR)(COLOR c, int w, int h)
 ```
 
 <style> <ID> pre { font-size: 45%; } </style>
+
+Notes:
+- The simplest procedural image
 
 ----
 
@@ -211,6 +229,10 @@ mixin template Warp(V)
 ```
 
 <style> <ID> pre { font-size: 40%; } </style>
+
+Notes:
+- Here is another mixin which uses a supplied `warp` function
+- `warp` is to modify the given coordinates somehow
 
 ----
 
@@ -248,6 +270,11 @@ auto crop(V)(auto ref V src, int x0, int y0, int x1, int y1)
 
 <style> <ID> pre { font-size: 30%; } </style>
 
+Notes:
+- Cropping a view is simply shrinking its weight and height, and shifting the coordinates by some amount
+
+<!--
+
 ----
 
 ```d
@@ -273,6 +300,8 @@ void blitTo(SRC, DST)(auto ref SRC src, auto ref DST dst)
 
 <style> <ID> pre { font-size: 40%; } </style>
 
+-->
+
 ----
 
 ```d
@@ -294,6 +323,9 @@ template warp(string xExpr, string yExpr)
 ```
 
 <style> <ID> pre { font-size: 50%; } </style>
+
+Notes:
+- For simple transformations which do not change the view size, we can define a helper function that simply applies a user-specified formula to each pixel’s coordinates:
 
 ----
 
@@ -371,6 +403,7 @@ auto rotateCW(V)(auto ref V src)
 
 Notes:
 - because of the optimization, vflip of an image in memory will still allow scanline access
+- 4x rotateCW = no-op
 
 ----
 
