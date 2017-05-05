@@ -20,6 +20,7 @@ void main()
 		{
 			return markdown
 				.replaceAll(regex(`<!--.*?-->`, "s"), "")
+				.replace("<DIR>", fn.dirName())
 				.splitter("\n----\n")
 				.enumerate
 				.map!((pair)

@@ -106,4 +106,4 @@ Notes:
 
 ----
 
-<video controls src="slides/60-imaging/live-/video.mp4">
+<video controls src="<DIR>/live-/video.mp4">
