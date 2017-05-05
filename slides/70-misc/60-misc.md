@@ -1,4 +1,3 @@
-<!--
 # Part 7
 
 ### Bonus slides
@@ -106,5 +105,3 @@ Notes:
 ----
 
 <a href="https://github.com/CyberShadow/rclidasm">https://github.com/<br>CyberShadow/rclidasm</a>
-
--->
